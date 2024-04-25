@@ -93,3 +93,30 @@ exports.createAllTrackingController = async (req, res) => {
     });
   }
 };
+
+//single BLOGS
+exports.getBlogByIdController = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log("req.params", req.params);
+    const userTracking = await TrackingModal.findById(id);
+    if (!userTracking) {
+      return res.status(404).send({
+        message: "blog not found with this is",
+        success: false,
+      });
+    }
+    return res.status(200).send({
+      message: "fatch single blog",
+      success: true,
+      userTracking,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(400).send({
+      message: "Error white single Blogs",
+      success: false,
+      error,
+    });
+  }
+};

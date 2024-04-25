@@ -4,6 +4,7 @@ const {
   createAllTrackingController,
   updateAllTrackingController,
   deleteAllTrackingController,
+  getBlogByIdController,
 } = require("../controllers/TrackingController");
 
 const multer = require("multer");
@@ -23,6 +24,10 @@ router.post(
   upload.single("image"),
   createAllTrackingController
 );
+
+//GET || Single blogs Details
+router.get("/get-track/:id", getBlogByIdController);
+
 //PUT || update Tracking
 // router.put("/update-tracking/:id", updateAllTrackingController);
 
