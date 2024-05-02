@@ -14,6 +14,19 @@ const tackingDataSchema = new mongoose.Schema(
       type: String,
       required: [true, "Image is Reguired"],
     },
+    data: [
+      {
+        name: {
+          type: String,
+        },
+        input1: {
+          type: String,
+        },
+        input2: {
+          type: String,
+        },
+      },
+    ],
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",

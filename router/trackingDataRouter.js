@@ -5,6 +5,7 @@ const {
   updateAllTrackingController,
   deleteAllTrackingController,
   getBlogByIdController,
+  userBlogsController,
 } = require("../controllers/TrackingController");
 
 const multer = require("multer");
@@ -33,5 +34,8 @@ router.get("/get-track/:id", getBlogByIdController);
 
 // //DELETE || delete Tracking
 // router.delete("/delete-tracking/:id", deleteAllTrackingController);
+
+//GET || User blog
+router.get("/user-track/:id", userBlogsController);
 
 module.exports = router;

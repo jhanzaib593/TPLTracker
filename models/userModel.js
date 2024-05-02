@@ -26,6 +26,12 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Gender Name Is Reguired"],
     },
+    trackdata: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Tracking Data",
+      },
+    ],
   },
   { timestamps: true }
 );
